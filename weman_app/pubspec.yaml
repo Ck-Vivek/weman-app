@@ -1,0 +1,45 @@
+name: weman_app
+description: "WEMAN - Karnataka Social Fitness App for Gym Communities"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+  flutter: ">=3.19.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  
+  # Navigation & Routing
+  go_router: ^14.0.1
+  
+  # State Management
+  flutter_riverpod: ^2.5.1
+  
+  # Styling & Fonts
+  google_fonts: ^6.2.1
+  
+  # Networking & HTTP
+  http: ^1.2.1
+  
+  # Image & Cache
+  cached_network_image: ^3.3.1
+  
+  # Utilities
+  intl: ^0.20.3
+  uuid: ^4.3.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/

@@ -1,0 +1,74 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: weman-postgres
+    environment:
+      POSTGRES_DB: weman_db
+      POSTGRES_USER: weman_user
+      POSTGRES_PASSWORD: weman_secure_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U weman_user -d weman_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: weman-redis
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  weman-stream:
+    build:
+      context: ./weman_stream
+      dockerfile: Dockerfile
+    container_name: weman-stream
+    ports:
+      - "8081:8081"
+    depends_on:
+      - redis
+    environment:
+      - PORT=8081
+      - REDIS_ADDR=redis:6379
+
+  weman-core:
+    build:
+      context: ./weman_core
+      dockerfile: Dockerfile
+    container_name: weman-core
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/weman_db
+      - SPRING_DATASOURCE_USERNAME=weman_user
+      - SPRING_DATASOURCE_PASSWORD=weman_secure_password
+
+  weman-gateway:
+    image: nginx:alpine
+    container_name: weman-gateway
+    ports:
+      - "80:80"
+    volumes:
+      - ./gateway/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - weman-stream
+      - weman-core
+
+volumes:
+  postgres_data:

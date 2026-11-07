@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-container": "#656464", "inverse-surface": "#2e3132", "surface-container-high": "#e7e8e9", "on-secondary-fixed": "#1c1b1b", "inverse-primary": "#abd600", "surface-variant": "#e1e3e4", "primary-fixed-dim": "#abd600", "surface-container-low": "#f3f4f5", "surface-container-highest": "#e1e3e4", "secondary-fixed-dim": "#c8c6c5", "secondary": "#5f5e5e", "on-primary": "#161e00", "on-primary-fixed": "#161e00", "surface": "#F7F8F5", "on-error-container": "#93000a", "primary-fixed": "#C6F536", "tertiary-fixed-dim": "#bfc8d0", "tertiary": "#575f67", "background": "#F7F8F5", "surface-bright": "#F7F8F5", "on-secondary": "#ffffff", "outline-variant": "#c4c9ac", "surface-container": "#edeeef", "on-tertiary": "#ffffff", "on-secondary-fixed-variant": "#474646", "on-tertiary-fixed-variant": "#3f484f", "error": "#ba1a1a", "surface-tint": "#506600", "on-background": "#191c1d", "on-tertiary-fixed": "#141d23", "tertiary-fixed": "#dbe4ed", "error-container": "#ffdad6", "on-tertiary-container": "#636c74", "on-error": "#ffffff", "on-surface": "#191c1d", "primary": "#506600", "secondary-fixed": "#e5e2e1", "on-primary-container": "#161e00", "inverse-on-surface": "#f0f1f2", "surface-dim": "#d9dadb", "tertiary-container": "#e5eef7", "surface-container-lowest": "#FFFFFF", "on-surface-variant": "#444933", "primary-container": "#C6F536", "secondary-container": "#e5e2e1", "outline": "#747a60", "on-primary-fixed-variant": "#3c4d00" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "space-xl": "2rem", "margin-tablet": "1.5rem", "margin": "1rem", "margin-desktop": "2.5rem", "space-2xl": "3rem", "space-2xs": "0.25rem", "space-xs": "0.5rem", "space-sm": "0.75rem", "space-lg": "1.5rem", "space-md": "1rem", "gutter-desktop": "1.5rem", "gutter": "1rem" }, "fontFamily": { "headline-lg": ["Space Grotesk"], "body-lg": ["DM Sans"], "label-lg": ["Space Grotesk"], "headline-sm": ["Space Grotesk"], "body-md": ["DM Sans"], "label-md": ["Space Grotesk"], "headline-md": ["Space Grotesk"], "display-hero": ["Space Grotesk"], "headline-lg-mobile": ["Space Grotesk"], "display-hero-mobile": ["Space Grotesk"], "body-sm": ["DM Sans"], "label-sm": ["Space Grotesk"] }, "fontSize": { "headline-lg": ["36px", { "lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-md": ["24px", { "lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "display-hero": ["56px", { "lineHeight": "60px", "letterSpacing": "-0.04em", "fontWeight": "700" }], "headline-lg-mobile": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "display-hero-mobile": ["40px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "body-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700" }] } } } }</script><style>body { min-height: max(884px, 100dvh); }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-background font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_1px_12px_rgba(23,25,20,0.04)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="Go back" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-high active:scale-95 transition-all -ml-2" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-headline-sm text-headline-sm font-bold text-on-surface truncate">Notify Chat</h1></div><div class="flex items-center gap-1"><a aria-label="Notifications Inbox" class="relative w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-high active:scale-95 transition-all" data-path="notify-inbox" href="#"><span class="material-symbols-outlined text-[24px]">send</span></a><a aria-label="More Info" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-high active:scale-95 transition-all" data-path="notify-info" href="#"><span class="material-symbols-outlined text-[24px]">info</span></a></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full relative">
+<!-- Top Bar / Sub-Header Context Area -->
+<div class="px-margin pt-space-xs pb-space-sm flex items-center justify-between bg-surface/95 backdrop-blur-md sticky top-0 z-20">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative shrink-0">
+<div class="w-12 h-12 rounded-full overflow-hidden p-[2px] bg-primary-container shadow-sm">
+<img class="w-full h-full object-cover rounded-full" data-alt="High energy athletic headshot of coach Maya Torres smiling warmly in minimalist gym apparel, natural lighting with soft neon chartreuse accent glow in background, modern fitness studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMgEdN3uQISKZ4ave-PLR4hspedlHeUVqhUDftnVMmfKwh8x44cGiseXZf9f0_W04kog_EWOUtWuDCEvD7_kl3BWBRQKUJtGptlRatK4xZMaujyfhJV7qr6i-_tfGqg3fo89XRe9qKfjI3waLmMcqMUpZt8yQ_4VmDgWuKQdaww0IuMy9_FOZupxGIeH-sc40XdkHm6zd_LtWHwShDkggdf2nkJdO7jgLV-0u7pO8SzanePLMqGXY3"/>
+</div>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-primary-container border-2 border-surface-container-lowest"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 truncate">
+<span class="font-headline-sm text-headline-sm truncate text-on-surface">Maya Torres</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">Coach</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="font-label-sm text-label-sm text-secondary truncate">@maya.fit</span>
+<span class="text-secondary text-[10px]">•</span>
+<span class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+            Active in Gym now
+          </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1 shrink-0">
+<button aria-label="Audio call with Maya" class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">call</span>
+</button>
+<button aria-label="Video call with Maya" class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">videocam</span>
+</button>
+</div>
+</div>
+<!-- Privacy Security Banner -->
+<div class="px-margin pt-space-xs pb-space-xs flex justify-center">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-low text-secondary font-label-sm text-label-sm shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-primary">lock</span>
+<span>Verified Athlete Channel • TLS 1.3 Protected</span>
+</div>
+</div>
+<!-- Chat Feed Stream -->
+<div class="px-margin flex flex-col gap-space-md pt-space-xs pb-24">
+<!-- Date Separator -->
+<div class="flex items-center justify-center my-space-xs">
+<span class="px-3 py-0.5 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm uppercase tracking-wider">
+        Today, Oct 24
+      </span>
+</div>
+<!-- Incoming Message 1 (Maya) -->
+<div class="flex flex-col items-start max-w-[85%] self-start">
+<div class="bg-surface-container-lowest text-on-surface rounded-2xl rounded-tl-sm p-3.5 shadow-sm">
+<p class="font-body-md text-body-md leading-relaxed">Hey Pavan! Saw your 180kg deadlift PR check-in on the feed. Solid hip drive! 💥</p>
+</div>
+<span class="font-label-sm text-label-sm text-secondary mt-1 ml-1">09:15 AM</span>
+</div>
+<!-- Outgoing Message 1 (Pavan) -->
+<div class="flex flex-col items-end max-w-[85%] self-end">
+<div class="bg-inverse-surface text-inverse-on-surface rounded-2xl rounded-tr-sm p-3.5 shadow-sm">
+<p class="font-body-md text-body-md leading-relaxed">Thanks Maya! Felt really explosive off the floor. Tweaked my setup as you suggested.</p>
+</div>
+<div class="flex items-center gap-1 mt-1 mr-1">
+<span class="font-label-sm text-label-sm text-secondary">09:18 AM</span>
+<span class="material-symbols-outlined text-[16px] text-primary-container" style="font-variation-settings: 'FILL' 1;">done_all</span>
+</div>
+</div>
+<!-- Incoming Message 2 with Interactive Card (Maya) -->
+<div class="flex flex-col items-start max-w-[90%] self-start">
+<div class="bg-surface-container-lowest text-on-surface rounded-2xl rounded-tl-sm p-3.5 shadow-sm flex flex-col gap-3 w-full">
+<p class="font-body-md text-body-md">Take a look at this accessory drill to pair with your deadlifts:</p>
+<!-- Rich Exercise Attachment Card -->
+<div class="rounded-xl overflow-hidden bg-surface-container-low shadow-sm flex flex-col">
+<div class="relative w-full h-36 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Athletic fitness athlete hanging from pull-up bar performing hanging leg raises core stability anti-extension training exercise in clean editorial gymnasium studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6BPuZIICVc2Sq8r_dtFscAFhDAEm_AjCbaQifteFzYFCVsTYuv9sa90iMYJ5-wRcNSVeR9azMINBqvqmE5xN9K-MUOIEn5iZ9XjGV9MX9OrqnfKZuzk3cqNQLO2rCfAi_xTR_H_Kl9v1xDEMb1bnqtaB_4qQ6w0LLGegKz7xyNgjuipnZSVxeOC15O3NzPRmrPOKLJRnRTAFkend_AeV3cZEyPxynZBA1WsCnQz4U5zpAIEz-m7Ax"/>
+<div class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-inverse-surface/80 backdrop-blur-md text-inverse-on-surface font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-primary-container">fitness_center</span>
+<span>Accessory Core</span>
+</div>
+<div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm">
+              Level 3
+            </div>
+</div>
+<div class="p-3 flex flex-col gap-2">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight">Hanging Leg Raises &amp; Core Anti-Extension</h3>
+<p class="font-label-md text-label-md text-secondary mt-0.5">4 Sets × 12-15 Reps</p>
+</div>
+<button class="w-full mt-1 py-2 px-3 rounded-full bg-primary-container hover:bg-primary-fixed-dim text-on-primary-container font-label-md text-label-md flex items-center justify-between transition-transform active:scale-98">
+<span>Inspect Drill</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary mt-1 ml-1">09:21 AM</span>
+</div>
+<!-- Outgoing Message with Photo Attachment (Pavan) -->
+<div class="flex flex-col items-end max-w-[85%] self-end">
+<div class="bg-inverse-surface text-inverse-on-surface rounded-2xl rounded-tr-sm p-2 shadow-sm flex flex-col gap-2">
+<div class="rounded-xl overflow-hidden relative max-h-56">
+<img class="w-full h-full object-cover rounded-xl" data-alt="Close up aesthetic shot of premium black leather lever lifting powerlifting belt with polished steel buckle beside barefoot gym shoes on wooden lifting platform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOeM--XGM-GRpwatth6vFV451PZ2bKnCZWDqSFYh1GZwQXqc-H4gdr_P0SQrWcBTFmgsVeVK2Ip5Dk2Qn77stK5V7U4nDZafRBOBrxNwWoxxEmNX1Ui41cZbhsGDaTcV-yVHfkmlU_wURCLP-raKlG6b26tQPp21wUCtW6xcgVrgrIx9CRAsAkoqi9uOEL_0lu2jKI3wCNCmrqiSZO2L81Z8c-bCZXlft60rSWUDd8bgQ9W11BbSnx"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/60 via-transparent to-transparent"></div>
+</div>
+<p class="font-body-md text-body-md px-1.5 pb-1 leading-relaxed">Got the new lever belt calibrated for Friday's heavy session!</p>
+</div>
+<div class="flex items-center gap-1 mt-1 mr-1">
+<span class="font-label-sm text-label-sm text-secondary">09:24 AM</span>
+<span class="material-symbols-outlined text-[16px] text-primary-container" style="font-variation-settings: 'FILL' 1;">done_all</span>
+</div>
+</div>
+<!-- Incoming Message 3 (Maya) -->
+<div class="flex flex-col items-start max-w-[85%] self-start">
+<div class="bg-surface-container-lowest text-on-surface rounded-2xl rounded-tl-sm p-3.5 shadow-sm">
+<p class="font-body-md text-body-md leading-relaxed">Perfect. Keep the bracing tight and maintain intra-abdominal pressure.</p>
+</div>
+<span class="font-label-sm text-label-sm text-secondary mt-1 ml-1">09:25 AM</span>
+</div>
+</div>
+<!-- Bottom Message Input Dock -->
+<div class="fixed bottom-0 left-0 right-0 p-margin bg-surface/90 backdrop-blur-xl z-30 shadow-[0_-4px_16px_rgba(0,0,0,0.03)]">
+<!-- Quick Reaction Emojis Pills -->
+<div class="flex items-center gap-2 mb-2 overflow-x-auto">
+<button class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-sm text-label-sm shadow-sm active:scale-95 transition-transform shrink-0" onclick="appendEmoji('🏋️')">
+<span>🏋️</span>
+<span class="text-secondary text-[11px]">Lifting</span>
+</button>
+<button class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-sm text-label-sm shadow-sm active:scale-95 transition-transform shrink-0" onclick="appendEmoji('⚡')">
+<span>⚡</span>
+<span class="text-secondary text-[11px]">Power</span>
+</button>
+<button class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-sm text-label-sm shadow-sm active:scale-95 transition-transform shrink-0" onclick="appendEmoji('💪')">
+<span>💪</span>
+<span class="text-secondary text-[11px]">Pump</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<!-- Media / Attachments Trigger -->
+<button aria-label="Upload media or attach workout" class="w-11 h-11 flex items-center justify-center rounded-full bg-surface-container-lowest text-on-surface shadow-sm hover:bg-surface-container active:scale-95 transition-transform shrink-0">
+<span class="material-symbols-outlined text-[22px]">add</span>
+</button>
+<!-- Input Field Wrap -->
+<div class="flex-1 flex items-center rounded-full bg-surface-container-lowest shadow-sm px-3.5 h-12 gap-2 min-w-0">
+<input class="w-full bg-transparent border-0 outline-none font-body-md text-body-md text-on-surface placeholder:text-secondary focus:ring-0 px-0" id="message-input" placeholder="Message Maya..." type="text"/>
+<button aria-label="Record voice note" class="w-8 h-8 flex items-center justify-center text-secondary hover:text-on-surface active:scale-90 transition-transform shrink-0">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</button>
+</div>
+<!-- Neon Lime Circular Send Button -->
+<button aria-label="Send message" class="w-12 h-12 flex items-center justify-center rounded-full bg-primary-container text-on-primary-container shadow-md active:scale-90 transition-transform shrink-0" onclick="submitMessage()">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  function appendEmoji(emoji) {
+    const input = document.getElementById('message-input');
+    if (input) {
+      input.value += emoji + ' ';
+      input.focus();
+    }
+  }
+
+  function submitMessage() {
+    const input = document.getElementById('message-input');
+    if (input && input.value.trim() !== '') {
+      input.value = '';
+    }
+  }
+</script></main></body></html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html><html class="light" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_stack" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-container": "#656464", "inverse-surface": "#2e3132", "surface-container-high": "#e7e8e9", "on-secondary-fixed": "#1c1b1b", "inverse-primary": "#abd600", "surface-variant": "#e1e3e4", "primary-fixed-dim": "#abd600", "surface-container-low": "#f3f4f5", "surface-container-highest": "#e1e3e4", "secondary-fixed-dim": "#c8c6c5", "secondary": "#5f5e5e", "on-primary": "#161e00", "on-primary-fixed": "#161e00", "surface": "#F7F8F5", "on-error-container": "#93000a", "primary-fixed": "#C6F536", "tertiary-fixed-dim": "#bfc8d0", "tertiary": "#575f67", "background": "#F7F8F5", "surface-bright": "#F7F8F5", "on-secondary": "#ffffff", "outline-variant": "#c4c9ac", "surface-container": "#edeeef", "on-tertiary": "#ffffff", "on-secondary-fixed-variant": "#474646", "on-tertiary-fixed-variant": "#3f484f", "error": "#ba1a1a", "surface-tint": "#506600", "on-background": "#191c1d", "on-tertiary-fixed": "#141d23", "tertiary-fixed": "#dbe4ed", "error-container": "#ffdad6", "on-tertiary-container": "#636c74", "on-error": "#ffffff", "on-surface": "#191c1d", "primary": "#506600", "secondary-fixed": "#e5e2e1", "on-primary-container": "#161e00", "inverse-on-surface": "#f0f1f2", "surface-dim": "#d9dadb", "tertiary-container": "#e5eef7", "surface-container-lowest": "#FFFFFF", "on-surface-variant": "#444933", "primary-container": "#C6F536", "secondary-container": "#e5e2e1", "outline": "#747a60", "on-primary-fixed-variant": "#3c4d00" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "space-xl": "2rem", "margin-tablet": "1.5rem", "margin": "1rem", "margin-desktop": "2.5rem", "space-2xl": "3rem", "space-2xs": "0.25rem", "space-xs": "0.5rem", "space-sm": "0.75rem", "space-lg": "1.5rem", "space-md": "1rem", "gutter-desktop": "1.5rem", "gutter": "1rem" }, "fontFamily": { "headline-lg": ["Space Grotesk"], "body-lg": ["DM Sans"], "label-lg": ["Space Grotesk"], "headline-sm": ["Space Grotesk"], "body-md": ["DM Sans"], "label-md": ["Space Grotesk"], "headline-md": ["Space Grotesk"], "display-hero": ["Space Grotesk"], "headline-lg-mobile": ["Space Grotesk"], "display-hero-mobile": ["Space Grotesk"], "body-sm": ["DM Sans"], "label-sm": ["Space Grotesk"] }, "fontSize": { "headline-lg": ["36px", { "lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-md": ["24px", { "lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "display-hero": ["56px", { "lineHeight": "60px", "letterSpacing": "-0.04em", "fontWeight": "700" }], "headline-lg-mobile": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "display-hero-mobile": ["40px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "body-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700" }] } } } }</script><style>body { min-height: max(884px, 100dvh); }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-background font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_1px_12px_rgba(23,25,20,0.04)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="Go back" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-high active:scale-95 transition-all -ml-2" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-headline-sm text-headline-sm font-bold text-on-surface truncate">Leaderboard</h1></div><div class="flex items-center gap-1"><a aria-label="Notifications Inbox" class="relative w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-high active:scale-95 transition-all" data-path="notify-inbox" href="#"><span class="material-symbols-outlined text-[24px]">send</span></a><a aria-label="More Info" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-high active:scale-95 transition-all" data-path="notify-info" href="#"><span class="material-symbols-outlined text-[24px]">info</span></a></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full pb-28">
+<!-- Search Section -->
+<div class="px-margin pt-space-xs pb-space-sm">
+<div class="relative flex items-center w-full">
+<span class="material-symbols-outlined absolute left-4 text-secondary text-[20px] pointer-events-none">search</span>
+<input class="w-full h-12 pl-11 pr-4 rounded-full bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder:text-secondary focus:outline-none shadow-sm" id="leaderboard-search" placeholder="Search athletes, gym clubs..." type="search">
+<button aria-label="Filter options" class="absolute right-2 w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+<!-- Scope Filter Chips (Horizontal Scroll) -->
+<div class="w-full overflow-x-auto no-scrollbar py-space-xs px-margin">
+<div class="flex items-center gap-space-xs whitespace-nowrap min-w-max" id="scope-chips">
+<button class="scope-chip px-4 py-2 rounded-full font-label-md text-label-md bg-primary-container text-on-primary-fixed shadow-sm active:scale-95 transition-all flex items-center gap-1.5" data-scope="national">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+        National (India)
+      </button>
+<button class="scope-chip px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container-lowest text-secondary shadow-sm active:scale-95 transition-all" data-scope="state">
+        State (Karnataka)
+      </button>
+<button class="scope-chip px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container-lowest text-secondary shadow-sm active:scale-95 transition-all" data-scope="district">
+        District (Bangalore Urban)
+      </button>
+<button class="scope-chip px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container-lowest text-secondary shadow-sm active:scale-95 transition-all" data-scope="region">
+        Region (South)
+      </button>
+<button class="scope-chip px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container-lowest text-secondary shadow-sm active:scale-95 transition-all" data-scope="college">
+        College (Metro Univ)
+      </button>
+</div>
+</div>
+<!-- Athletic Top 3 Podium Section -->
+<section aria-label="Top 3 Podium" class="px-margin mt-space-sm mb-space-md">
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<!-- Ambient decorative glow -->
+<div class="absolute -top-12 left-1/2 -translate-x-1/2 w-48 h-48 bg-primary-container/30 rounded-full blur-2xl pointer-events-none"></div>
+<div class="relative flex items-end justify-between gap-2 pt-space-md">
+<!-- Rank 2: Silver Pedestal (Left) -->
+<div class="flex-1 flex flex-col items-center z-10">
+<div class="relative mb-2">
+<div class="w-16 h-16 rounded-full overflow-hidden shadow-md bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Athletic Indian female athlete Sneha Rao wearing neon fitness activewear smiling intensely after workout session in high tech modern gym with subtle metallic lighting and soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbWhwTXn23u8f0wBHsMBpPnWzNsvnB_ylpJHQAEAJ0UnmaLW_a_XcAxE0fcL8Us5GnRuZZtBFBbd3yn3LPvzPKwoX42hB95iJVY5vdz2xGqiZxHVU2ZVw8w7mcBaEo63yBi3MlrWCnUsQJ4mfwlC8XE_Qq0sNmIwMFrPSq0DfnjNy8aE78rxgDXRwthgBtj08i1odm7V4X7ij2brJd3qmG5VQ30AqpmNlF_KMw4okxuIu0n5hgglSB">
+</div>
+<div class="absolute -bottom-2 -right-1 w-6 h-6 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-[15px] text-secondary">workspace_premium</span>
+</div>
+</div>
+<div class="text-center w-full min-w-0 mb-2">
+<h2 class="font-headline-sm text-label-lg font-bold text-on-surface truncate">Sneha Rao</h2>
+<span class="inline-block px-2 py-0.5 mt-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm truncate max-w-full">Master</span>
+<div class="font-headline-sm text-label-md font-bold text-primary mt-1">9,210 XP</div>
+</div>
+<!-- Silver Pillar -->
+<div class="w-full h-24 rounded-t-lg bg-surface-container-high flex flex-col items-center justify-start pt-2 shadow-inner">
+<span class="font-headline-md text-headline-md font-black text-secondary">2</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Silver</span>
+</div>
+</div>
+<!-- Rank 1: Gold Pedestal (Center, Elevated) -->
+<div class="flex-1 flex flex-col items-center z-20">
+<div class="relative mb-2">
+<!-- Pulsing neon gold ring -->
+<div class="absolute -inset-1.5 rounded-full bg-primary-container blur-[2px] opacity-80 animate-pulse"></div>
+<div class="relative w-20 h-20 rounded-full overflow-hidden shadow-lg bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Athletic Indian male fitness competitor Arjun Mehta with defined physique and intense focused expression wearing gym apparel under warm dramatic spotlighting with golden energetic accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQNTLCikX5_o5zgXSYFLVFiY9ejIQCSYPv8j5kMpr0SsEo1_sr6F7XZ9ArRiA_a-979Yb6XkdtJWKeyAAlCaHlepSasYfIN2vWJyF1ExRVHN60S_f_wegIIbt-r8AzsAaOtXlZQcUtZZ4iAjv2mQ4krD7bREdPGjA-Um_6o_xd6x5_WKwVA4ujzj_doBu72ifB3n75lBeLyC0gpqiAqmW8VT9ILsuAH5R5rxCLgIMHlOadshYWCkYW">
+</div>
+<!-- Crown Badge -->
+<div class="absolute -top-3.5 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-primary-container text-on-primary-fixed flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-[18px]">crown</span>
+</div>
+<!-- Number 1 Pin -->
+<div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md">
+<span class="font-label-sm text-label-sm font-black">1</span>
+</div>
+</div>
+<div class="text-center w-full min-w-0 mb-2">
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface truncate">Arjun Mehta</h2>
+<span class="inline-block px-2.5 py-0.5 mt-0.5 rounded-full bg-primary-container text-on-primary-fixed font-label-sm text-label-sm uppercase tracking-wide truncate max-w-full">Grandmaster</span>
+<div class="font-headline-md text-headline-sm font-extrabold text-on-surface mt-1">9,840 XP</div>
+</div>
+<!-- Gold Pillar -->
+<div class="w-full h-32 rounded-t-lg bg-gradient-to-b from-primary-container to-surface-container-high flex flex-col items-center justify-start pt-2.5 shadow-md">
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-black text-on-primary-fixed">1</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-primary-fixed font-bold">Top Gymer</span>
+</div>
+</div>
+<!-- Rank 3: Bronze Pedestal (Right) -->
+<div class="flex-1 flex flex-col items-center z-10">
+<div class="relative mb-2">
+<div class="w-16 h-16 rounded-full overflow-hidden shadow-md bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Young South Asian male bodybuilder Vikram Das smiling during calisthenics training in modern industrial crossfit box gym with soft natural window illumination and minimalist equipment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdpje1OjY-ytgLnTbNe51sK7RJaIxf49Bh3glTeVZX77iVCQOPevaXPSdZfZh2W2jtfUvKUuzzogmmiuEhtbfGcGg89MFh1fhli4BmuEU2roUb7rnBWsUTTN1RkdBhLBgOXnFbsC7P2udurhx0JYm1NIMD5S9OqE44cNY9OiRCrCPxYMuBYTPr6rw7rGG0tn0uAopTSQhqPu4XNpPTBnrciUmRQ9AsT6oVX61KfKBmZXEMQrrxJe5R">
+</div>
+<div class="absolute -bottom-2 -left-1 w-6 h-6 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-[15px] text-outline">military_tech</span>
+</div>
+</div>
+<div class="text-center w-full min-w-0 mb-2">
+<h2 class="font-headline-sm text-label-lg font-bold text-on-surface truncate">Vikram Das</h2>
+<span class="inline-block px-2 py-0.5 mt-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm truncate max-w-full">Elite</span>
+<div class="font-headline-sm text-label-md font-bold text-primary mt-1">8,890 XP</div>
+</div>
+<!-- Bronze Pillar -->
+<div class="w-full h-20 rounded-t-lg bg-surface-container-high flex flex-col items-center justify-start pt-2 shadow-inner">
+<span class="font-headline-md text-headline-md font-black text-secondary">3</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Bronze</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section Header -->
+<div class="px-margin flex items-center justify-between mt-space-xs mb-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">leaderboard</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Top Contenders</h3>
+</div>
+<span class="font-label-md text-label-md text-secondary">Updated 10m ago</span>
+</div>
+<!-- Contenders List (Scrollable Rows) -->
+<div class="px-margin flex flex-col gap-2.5" id="leaderboard-list">
+<!-- Rank #4 -->
+<div class="flex items-center justify-between p-3.5 rounded-lg bg-surface-container-lowest shadow-sm hover:shadow-md transition-all">
+<div class="flex items-center gap-3 min-w-0">
+<span class="font-headline-sm text-headline-sm font-bold text-secondary w-6 text-center shrink-0">4</span>
+<div class="relative w-12 h-12 rounded-full overflow-hidden shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Close up profile portrait of Indian fitness coach Rohan Sharma looking determined wearing athletic head band in daylight gym environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf3GkMVsk20JlZGEJ3-1o3Sk5T1uvds3SwWm-b-C_AJHN0Zr3PGeyh4W2Fwnspmpn-3OciY5wQ-l8G0ePSxMl2G99cyu3PB9HZX9sbUI-kaa4w_ZrCoT58jsUMn7JyGmvT32k7kiBrW54khf9WdoS7YTDqLKWQPwfvVxaSb92jJ34ut-f8uHTfDHIk8fo-MYPynlQx_jUHuwpB03I8xoSyJG7SkIzLALO6JqTJ2Tcxkji2QJc-UC39">
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<h4 class="font-headline-sm text-label-lg font-bold text-on-surface truncate">Rohan Sharma</h4>
+<span class="font-label-sm text-label-sm text-secondary truncate">@rohan.lifts</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">Master Athlete</span>
+</div>
+</div>
+</div>
+<div class="text-right shrink-0 ml-2">
+<div class="font-headline-sm text-label-lg font-extrabold text-on-surface">8,640 <span class="font-label-sm text-label-sm text-secondary">XP</span></div>
+<div class="flex items-center justify-end text-primary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>+2
+        </div>
+</div>
+</div>
+<!-- Rank #5 -->
+<div class="flex items-center justify-between p-3.5 rounded-lg bg-surface-container-lowest shadow-sm hover:shadow-md transition-all">
+<div class="flex items-center gap-3 min-w-0">
+<span class="font-headline-sm text-headline-sm font-bold text-secondary w-6 text-center shrink-0">5</span>
+<div class="relative w-12 h-12 rounded-full overflow-hidden shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Portrait of energetic young woman athlete Maya Torres tying hair preparing for high intensity functional workout session in gym space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_SKEyjObMOSKEzssvbDmmvz8EVGbCKGootMUP9AaQCx_9IJWuK1URt8lQLlMIWERbwpXzjJa-iYeUU0c8rCdeDrWhAL7zOpH4--cTSCCA5Zzd_LMO3XKTSEF75bNPHemS-LluW0719dhxlMIg_CfIe-72DRStHRWjKwjsVkKQLTcJp4f6JCCnui0WmC_rqvd28CULaeF7RTfYJSPJtXlKl4-6hCurkHSndIo-YvjldV86QInO4LKL">
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<h4 class="font-headline-sm text-label-lg font-bold text-on-surface truncate">Maya Torres</h4>
+<span class="font-label-sm text-label-sm text-secondary truncate">@maya.fit</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">Elite Athlete</span>
+</div>
+</div>
+</div>
+<div class="text-right shrink-0 ml-2">
+<div class="font-headline-sm text-label-lg font-extrabold text-on-surface">8,420 <span class="font-label-sm text-label-sm text-secondary">XP</span></div>
+<div class="flex items-center justify-end text-primary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>+4
+        </div>
+</div>
+</div>
+<!-- Rank #6 -->
+<div class="flex items-center justify-between p-3.5 rounded-lg bg-surface-container-lowest shadow-sm hover:shadow-md transition-all">
+<div class="flex items-center gap-3 min-w-0">
+<span class="font-headline-sm text-headline-sm font-bold text-secondary w-6 text-center shrink-0">6</span>
+<div class="relative w-12 h-12 rounded-full overflow-hidden shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Confident young male endurance runner Dev Patel in technical athletic tank top smiling calmly after finishing a long training block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBDRm7yb23gnYkj2AQIU_V6Ze7644ktfhghSl30qzDiBHuPvZWmDfCu1H0YRfTJ0V0cuEdLj8RIwnfDAs6Pwo-Hq16nnMdOE49OLAIJ-KDRbzuedol3-URq58THYdaWXG6-99Yw60YmdXCDI7hSZekIGCk4BWjZe3AvrrjNn5ZO6HEgar0qaaXhaUH1yB0B8clJNJl4l8GmuPskfcrEmVtdD3rjspBVTZqTkvOeMiBFfRXIbMrzhju">
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<h4 class="font-headline-sm text-label-lg font-bold text-on-surface truncate">Dev Patel</h4>
+<span class="font-label-sm text-label-sm text-secondary truncate">@dev.runs</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">Consistency Warrior</span>
+</div>
+</div>
+</div>
+<div class="text-right shrink-0 ml-2">
+<div class="font-headline-sm text-label-lg font-extrabold text-on-surface">8,190 <span class="font-label-sm text-label-sm text-secondary">XP</span></div>
+<div class="flex items-center justify-end text-secondary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">horizontal_rule</span>0
+        </div>
+</div>
+</div>
+<!-- Rank #7 -->
+<div class="flex items-center justify-between p-3.5 rounded-lg bg-surface-container-lowest shadow-sm hover:shadow-md transition-all">
+<div class="flex items-center gap-3 min-w-0">
+<span class="font-headline-sm text-headline-sm font-bold text-secondary w-6 text-center shrink-0">7</span>
+<div class="relative w-12 h-12 rounded-full overflow-hidden shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Strong female powerlifter Ananya Sen chalking hands with determined focus before deadlift attempt in modern industrial athletic training center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj6NLMjkJYQNxRVdMqjxoJQ-FQOXD-gHDI72VMcdrIPfhMTr0-ZDry-nyvkIs5P0IrKeIM9BqJC6O72XJtYfle20J3F7KYeN4sOyhlqHwDfwAmzmWgjVRuFZ9NMB5jlsGMzrroYOs6djnZw1ektYvGfgRZ9R5IXIKhA2oIfPes1v-mkf1bHAfui-zf94FeOgngY6VCLsE6ABzlSDg7UKJPZ50x05qfzBtgHm0H8qZCf7oCirvyfXrz">
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<h4 class="font-headline-sm text-label-lg font-bold text-on-surface truncate">Ananya Sen</h4>
+<span class="font-label-sm text-label-sm text-secondary truncate">@ananya.power</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">Master Athlete</span>
+</div>
+</div>
+</div>
+<div class="text-right shrink-0 ml-2">
+<div class="font-headline-sm text-label-lg font-extrabold text-on-surface">8,050 <span class="font-label-sm text-label-sm text-secondary">XP</span></div>
+<div class="flex items-center justify-end text-primary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>+1
+        </div>
+</div>
+</div>
+<!-- Rank #8 -->
+<div class="flex items-center justify-between p-3.5 rounded-lg bg-surface-container-lowest shadow-sm hover:shadow-md transition-all">
+<div class="flex items-center gap-3 min-w-0">
+<span class="font-headline-sm text-headline-sm font-bold text-secondary w-6 text-center shrink-0">8</span>
+<div class="relative w-12 h-12 rounded-full overflow-hidden shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Athletic male trainer Kabir Roy resting on kettlebells with towel over shoulders in sleek modern fitness studio with ambient green lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCidtLJJ4t_Uxjr1LiE3x6z-xWcSe1loGt7o3gM7GbAa5xFTtj09L-P-j6doDcLyGBTQ08nD6vzi6v45YcDkQRK7l7TaSlDiB_0Xo6fLPVQDcjSz6fiDh8SFjYuF8Xn6Z2JNfDQjx2Vhz4Fit3x4du7R0U8YDDJhRlfAULm6E5oDnKMMFoc0rutLxidY4B5RJuVIfUZG80jF6oFfWrehPlVnyWSq_dlQpjl6zX2PGmfPb0ZPI22IDue">
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<h4 class="font-headline-sm text-label-lg font-bold text-on-surface truncate">Kabir Roy</h4>
+<span class="font-label-sm text-label-sm text-secondary truncate">@kabir.lifts</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">Elite Athlete</span>
+</div>
+</div>
+</div>
+<div class="text-right shrink-0 ml-2">
+<div class="font-headline-sm text-label-lg font-extrabold text-on-surface">7,980 <span class="font-label-sm text-label-sm text-secondary">XP</span></div>
+<div class="flex items-center justify-end text-error font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">arrow_downward</span>-1
+        </div>
+</div>
+</div>
+</div>
+<!-- Footer illustrative note -->
+<div class="px-margin mt-space-lg mb-space-md text-center">
+<p class="font-body-sm text-body-sm text-secondary max-w-xs mx-auto leading-relaxed">
+      Rankings are illustrative demo computations based on logged workout consistency and volume.
+    </p>
+</div>
+<!-- Current User Rank Sticky Card (Fixed Bottom Above Shell Safe Area) -->
+<div class="fixed bottom-3 left-0 right-0 px-margin z-40 pointer-events-none">
+<div class="pointer-events-auto bg-on-surface text-surface rounded-xl p-3.5 shadow-xl flex items-center justify-between backdrop-blur-md bg-opacity-95 transform transition-all active:scale-[0.99]">
+<div class="flex items-center gap-3 min-w-0">
+<div class="relative">
+<div class="w-12 h-12 rounded-full overflow-hidden ring-2 ring-primary-container bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Energetic portrait of user Pavan wearing lightweight training vest with confident expression in sunny gym with modern aesthetics" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUeNEOq_OI8qAaqCiIcK2TOOy_G69RAJYDlG-Gh0eqh-6Rm53Q2SztEjtAPxwdZqNPsX6YlKDDi9wbIU9KnQ7IUqAcxkkujRIdNd4X-AUb5YcbgGmEGx0S6vmJtYxHvGSCmWc384c9pD4xVXDFhJjGW0mFyRZhJ9cnRvzqQ2osYmo_XiWMmRoFuqK7p-x35puCiidAeukRmzklOB1FnvIxx6od0STy_dBVOLaaUfvkOOZQhCEgce8u">
+</div>
+<div class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-fixed text-[11px] font-bold">bolt</span>
+</div>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<h4 class="font-headline-sm text-label-lg font-bold text-surface truncate">Pavan</h4>
+<span class="font-label-sm text-label-sm text-surface-container-high truncate">@pavan.fit</span>
+</div>
+<div class="flex items-center gap-1 text-primary-container font-label-sm text-label-sm mt-0.5 truncate font-semibold">
+<span>#14 National</span>
+<span class="opacity-60">|</span>
+<span>#2 State</span>
+</div>
+</div>
+</div>
+<div class="text-right shrink-0 ml-2">
+<div class="font-headline-sm text-label-lg font-extrabold text-surface">7,920 <span class="font-label-sm text-label-sm text-surface-container-high">XP</span></div>
+<div class="flex items-center justify-end text-primary-container font-label-sm text-label-sm font-bold gap-0.5">
+<span class="material-symbols-outlined text-[13px]">trending_up</span>+2 this week
+        </div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Filter chips interactive toggle
+  document.querySelectorAll('.scope-chip').forEach(button => {
+    button.addEventListener('click', () => {
+      document.querySelectorAll('.scope-chip').forEach(btn => {
+        btn.classList.remove('bg-primary-container', 'text-on-primary-fixed');
+        btn.classList.add('bg-surface-container-lowest', 'text-secondary');
+        const pingDot = btn.querySelector('.animate-ping');
+        if (pingDot) pingDot.remove();
+      });
+
+      button.classList.remove('bg-surface-container-lowest', 'text-secondary');
+      button.classList.add('bg-primary-container', 'text-on-primary-fixed');
+      
+      const newDot = document.createElement('span');
+      newDot.className = 'w-2 h-2 rounded-full bg-primary animate-ping mr-0.5';
+      button.prepend(newDot);
+    });
+  });
+
+  // Simple live search filter simulation
+  const searchInput = document.getElementById('leaderboard-search');
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      const term = e.target.value.toLowerCase();
+      const rows = document.querySelectorAll('#leaderboard-list > div');
+      rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(term) ? 'flex' : 'none';
+      });
+    });
+  }
+</script></main></body></html>

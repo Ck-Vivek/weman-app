@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WEMAN — Interactive Flutter Mobile Device Canvas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;900&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <style>
+    :root {
+      --bg: #0B0D0F;
+      --surface: #14171A;
+      --card-bg: #1B1F23;
+      --border: #2B3037;
+      --volt: #CCFF00;
+      --volt-glow: rgba(204, 255, 0, 0.28);
+      --text: #F0F2F5;
+      --text-muted: #8A929B;
+      --phone-w: 395px;
+      --phone-h: 840px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: radial-gradient(circle at 75% 20%, rgba(204, 255, 0, 0.05), transparent 50%),
+                  radial-gradient(circle at 20% 80%, rgba(30, 40, 50, 0.6), transparent 50%),
+                  var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* Top Dev Header */
+    header {
+      height: 60px;
+      background: rgba(20, 23, 26, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .badge-volt {
+      background: var(--volt);
+      color: #111;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 900;
+      font-size: 13px;
+      letter-spacing: 1.2px;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .brand-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--text);
+    }
+
+    .pulse-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(204, 255, 0, 0.1);
+      border: 1px solid rgba(204, 255, 0, 0.3);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--volt);
+    }
+
+    .pulse-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--volt);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--volt);
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.4; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.2); }
+      100% { opacity: 0.4; transform: scale(0.9); }
+    }
+
+    /* Main Split Layout */
+    .workspace {
+      display: flex;
+      flex: 1;
+      height: calc(100vh - 60px);
+      overflow: hidden;
+    }
+
+    /* Left Control & Inspector Deck */
+    .control-deck {
+      width: 360px;
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      overflow-y: auto;
+    }
+
+    .deck-section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+    }
+
+    .deck-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Navigation Buttons */
+    .screen-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .screen-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.2s ease;
+      text-align: left;
+    }
+
+    .screen-btn:hover {
+      border-color: var(--volt);
+      background: rgba(204, 255, 0, 0.06);
+    }
+
+    .screen-btn.active {
+      background: var(--volt);
+      color: #111;
+      border-color: var(--volt);
+      box-shadow: 0 4px 14px var(--volt-glow);
+    }
+
+    .screen-btn .icon {
+      font-size: 18px;
+    }
+
+    /* Action Deck Buttons */
+    .sync-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .action-btn {
+      padding: 12px;
+      border-radius: 12px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-reload {
+      background: rgba(204, 255, 0, 0.12);
+      border-color: var(--volt);
+      color: var(--volt);
+    }
+
+    .btn-reload:hover {
+      background: var(--volt);
+      color: #111;
+      box-shadow: 0 4px 16px var(--volt-glow);
+    }
+
+    .btn-restart {
+      background: var(--surface);
+      color: var(--text);
+    }
+
+    .btn-restart:hover {
+      background: #fff;
+      color: #111;
+    }
+
+    /* Tech Info & Ports */
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .info-label { color: var(--text-muted); }
+    .info-val { font-family: 'JetBrains Mono', monospace; font-weight: 600; color: var(--volt); }
+
+    /* Canvas Stage Area */
+    .canvas-stage {
+      flex: 1;
+      background: radial-gradient(circle at center, #16191D 0%, #0B0D0F 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 20px;
+    }
+
+    /* High-Fidelity Smartphone Frame */
+    .phone-container {
+      width: var(--phone-w);
+      height: var(--phone-h);
+      background: #000;
+      border-radius: 52px;
+      padding: 12px;
+      box-shadow: 
+        0 0 0 3px #3A3E45,
+        0 0 0 7px #1E2125,
+        0 30px 70px rgba(0, 0, 0, 0.8),
+        0 0 60px var(--volt-glow);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+    }
+
+    .screen-bezel {
+      flex: 1;
+      background: #F8F9FA;
+      border-radius: 42px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Hardware Elements */
+    .speaker-notch {
+      position: absolute;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 24px;
+      background: #000;
+      border-radius: 14px;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .camera-lens {
+      width: 11px;
+      height: 11px;
+      background: #111;
+      border: 2px solid #222;
+      border-radius: 50%;
+      margin-left: 50px;
+    }
+
+    /* Embedded Flutter Web Iframe */
+    .flutter-frame {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: #F8F9FA;
+    }
+
+    /* Hardware Buttons Simulation */
+    .side-button {
+      position: absolute;
+      background: #2E3238;
+      border-radius: 2px;
+    }
+    .vol-up { left: -9px; top: 140px; width: 4px; height: 50px; }
+    .vol-down { left: -9px; top: 205px; width: 4px; height: 50px; }
+    .power { right: -9px; top: 160px; width: 4px; height: 65px; }
+
+    /* Home Bar */
+    .home-indicator {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 130px;
+      height: 4px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 4px;
+      z-index: 50;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="brand-group">
+      <span class="badge-volt">WEMAN</span>
+      <span class="brand-title">Interactive Flutter Canvas • Mobile Viewport</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <div class="pulse-live">
+        <span class="pulse-dot"></span>
+        <span>FLUTTER ENGINE LIVE (:3000)</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Workspace -->
+  <div class="workspace">
+    <!-- Controls Sidebar -->
+    <div class="control-deck">
+      <!-- Screen Quick Switcher -->
+      <div class="deck-section">
+        <div class="deck-title">
+          <span class="material-symbols-outlined" style="font-size: 16px; color: var(--volt);">smartphone</span>
+          Active Rebranded Screens
+        </div>
+        <div class="screen-grid">
+          <button class="screen-btn active" onclick="switchRoute('/feed', this)">
+            <span class="material-symbols-outlined icon">home</span>
+            <span>1. Home Feed (Stitch 1)</span>
+          </button>
+          <button class="screen-btn" onclick="switchRoute('/fitness-hub', this)">
+            <span class="material-symbols-outlined icon">fitness_center</span>
+            <span>2. Fitness Hub (Stitch 2)</span>
+          </button>
+          <button class="screen-btn" onclick="switchRoute('/fitness-tracking', this)">
+            <span class="material-symbols-outlined icon">monitoring</span>
+            <span>3. Fitness Tracking (Stitch 3)</span>
+          </button>
+          <button class="screen-btn" onclick="switchRoute('/rankings', this)">
+            <span class="material-symbols-outlined icon">leaderboard</span>
+            <span>4. Leaderboard & Rankings (Stitch 4)</span>
+          </button>
+          <button class="screen-btn" onclick="switchRoute('/reels', this)">
+            <span class="material-symbols-outlined icon">play_circle</span>
+            <span>5. Reels Video Player (Stitch 5)</span>
+          </button>
+          <button class="screen-btn" onclick="switchRoute('/profile', this)">
+            <span class="material-symbols-outlined icon">person</span>
+            <span>6. Profile & Rankings Below Achievements</span>
+          </button>
+          <button class="screen-btn" onclick="switchRoute('/diet-tracker', this)">
+            <span class="material-symbols-outlined icon">restaurant_menu</span>
+            <span>7. Diet & Hydration Tracker</span>
+          </button>
+          <button class="screen-btn" onclick="switchRoute('/active-training', this)">
+            <span class="material-symbols-outlined icon">timer</span>
+            <span>8. Active Workout Tracker</span>
+          </button>
+          <button class="screen-btn" onclick="switchRoute('/explore', this)">
+            <span class="material-symbols-outlined icon">explore</span>
+            <span>9. Explore & Gym Hubs</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Live Dev Actions -->
+      <div class="deck-section">
+        <div class="deck-title">
+          <span class="material-symbols-outlined" style="font-size: 16px; color: var(--volt);">sync</span>
+          Fast Refresh Hook
+        </div>
+        <div class="sync-actions">
+          <button class="action-btn btn-reload" onclick="triggerReload()">
+            <span class="material-symbols-outlined" style="font-size: 16px;">bolt</span>
+            Hot Reload (r)
+          </button>
+          <button class="action-btn btn-restart" onclick="triggerRestart()">
+            <span class="material-symbols-outlined" style="font-size: 16px;">refresh</span>
+            Hot Restart (R)
+          </button>
+        </div>
+        <p style="font-size: 11px; color: var(--text-muted); margin-top: 10px; line-height: 1.4;">
+          Pushes instant style updates & token alignments onto the canvas frame in under 1s.
+        </p>
+      </div>
+
+      <!-- Environment Specs -->
+      <div class="deck-section">
+        <div class="deck-title">
+          <span class="material-symbols-outlined" style="font-size: 16px; color: var(--volt);">tune</span>
+          Pipeline Specifications
+        </div>
+        <div class="info-row">
+          <span class="info-label">Client Target</span>
+          <span class="info-val">Flutter 3.47 (Dart 3.13)</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Live Stream Port</span>
+          <span class="info-val">http://localhost:3000</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Go Microservice</span>
+          <span class="info-val">:8081 (weman_stream)</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Java Core Service</span>
+          <span class="info-val">:8080 (weman_core)</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Brand Signature</span>
+          <span class="info-val">Volt-Green #CCFF00</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Mobile Canvas Stage -->
+    <div class="canvas-stage">
+      <div class="phone-container" id="phoneContainer">
+        <!-- Physical Side Buttons -->
+        <div class="side-button vol-up"></div>
+        <div class="side-button vol-down"></div>
+        <div class="side-button power"></div>
+
+        <!-- Phone Screen Bezel -->
+        <div class="screen-bezel">
+          <!-- Hardware Dynamic Island -->
+          <div class="speaker-notch">
+            <div class="camera-lens"></div>
+          </div>
+
+          <!-- Live Embedded Flutter Application -->
+          <iframe 
+            id="flutterIframe" 
+            class="flutter-frame" 
+            src="http://localhost:3000/#/"
+            title="WEMAN Flutter Mobile Application">
+          </iframe>
+
+          <!-- Home Swipe Bar -->
+          <div class="home-indicator"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const iframe = document.getElementById('flutterIframe');
+
+    function switchRoute(route, btn) {
+      document.querySelectorAll('.screen-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      iframe.src = `http://localhost:3000/#${route}`;
+    }
+
+    function triggerReload() {
+      const currentSrc = iframe.src;
+      iframe.src = currentSrc;
+      showToast('⚡ Hot Reload Triggered (Canvas refreshed)');
+    }
+
+    function triggerRestart() {
+      iframe.src = 'http://localhost:3000/#/';
+      document.querySelectorAll('.screen-btn').forEach(b => b.classList.remove('active'));
+      document.querySelector('.screen-btn').classList.add('active');
+      showToast('🔄 Hot Restart Triggered (Reinitialized)');
+    }
+
+    function showToast(msg) {
+      let toast = document.createElement('div');
+      toast.textContent = msg;
+      toast.style.position = 'fixed';
+      toast.style.bottom = '24px';
+      toast.style.right = '24px';
+      toast.style.background = '#CCFF00';
+      toast.style.color = '#111';
+      toast.style.padding = '10px 18px';
+      toast.style.borderRadius = '10px';
+      toast.style.fontFamily = 'Space Grotesk, sans-serif';
+      toast.style.fontWeight = 'bold';
+      toast.style.fontSize = '13px';
+      toast.style.boxShadow = '0 6px 20px rgba(204,255,0,0.4)';
+      toast.style.zIndex = '999';
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 2000);
+    }
+  </script>
+</body>
+</html>
